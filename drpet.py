@@ -331,7 +331,7 @@ def reanno_low_corr(adata, query_exp_df, file_name, gamma):
     return adata
 
 # Perform three-layered cell-type inference
-def drcat(file_path, cell_type_column, alpha=0.1, beta=0, gamma=0.2, t_cell_only=False, write_adata=False, plot=True, preprocess=False):
+def drpet(file_path, cell_type_column, alpha=0.1, beta=0, gamma=0.2, t_cell_only=False, write_adata=False, plot=True, preprocess=False):
 
     adata = sc.read_h5ad(file_path)
     file_name = file_path.split('/')[-1]
@@ -381,7 +381,7 @@ def plot_umap(adata, file_name, predicted_type='predicted_dr_cc_cl_tf', preproce
     fig.savefig('prediction/umap.%s.png' % (file_name.split('.')[0]))
 
 def main():
-    parser = argparse.ArgumentParser(description="Use DrCAT the three-layer annotation tool to infer cell types of blood scRNA-seq datasets.")
+    parser = argparse.ArgumentParser(description="Use DrPet the three-layer annotation tool to infer cell types of blood scRNA-seq datasets.")
 
     parser.add_argument('file_path', type=str, help="The file path of the query dataset")
     parser.add_argument('cell_type_column', type=str, help="The name of the cell type column in the query dataset")
@@ -399,7 +399,7 @@ def main():
 
     args = parser.parse_args()
 
-    drcat(file_path=args.file_path, 
+    drpet(file_path=args.file_path, 
           cell_type_column=args.cell_type_column, 
           alpha=args.alpha, 
           beta=args.beta, 
