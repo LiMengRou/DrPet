@@ -1,12 +1,12 @@
-# DrCAT: A Three-Layer Annotation Tool for Single-Cell RNA-seq Data
+# DrPet: A Three-Layer Annotation Tool for Single-Cell RNA-seq Data
 
-DrCAT is a tool designed to infer cell types in blood single-cell RNA sequencing (scRNA-seq) datasets using a three-layer annotation approach.
+DrPet is a tool designed to infer cell types in blood single-cell RNA sequencing (scRNA-seq) datasets using a three-layer annotation approach.
 
 ## Usage
 
-To run DrCAT, use the following command:
+To run DrPet, use the following command:
 
-python -m drcat <file_path> <cell_type_column> [optional arguments]
+python -m drpet <file_path> <cell_type_column> [optional arguments]
 
 ### Required Arguments
 file_path (str): The file path of the query dataset.
